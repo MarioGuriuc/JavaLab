@@ -15,12 +15,13 @@ public class Homework {
         }
         return checkKReduction(nextReduction, k);
     }
+
     public void findAllKReductible(int a, int b, int k) {
         StringBuilder str = new StringBuilder("The " + k + " reductilbe numbers in the interval [" + a +
-                                              ", " + b + "]" + " are:\n");
+                ", " + b + "]" + " are:\n");
         for (int i = a; i <= b; i++) {
             boolean possibleKNumber = checkKReduction(i, k);
-             if (possibleKNumber) {
+            if (possibleKNumber) {
                 str.append(i).append(" ");
             }
         }
