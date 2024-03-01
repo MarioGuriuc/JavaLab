@@ -1,4 +1,4 @@
-public class Main {
+public class Compulsory {
     public static void main(String[] args) {
         System.out.println("Hello World!")
         String[] languages = {"C", "C++", "C#", "Python", "Go", "Rust", "JavaScript", "PHP", "Swift", "Java"};
