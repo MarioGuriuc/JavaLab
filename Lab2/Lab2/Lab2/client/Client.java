@@ -1,20 +1,18 @@
-package Lab2.ClientPackage;
-
-import Lab2.VehiclePackage.Vehicle;
+package Lab2.Lab2.client;
 
 import java.util.Objects;
 
 public class Client {
 	private String name;
 	private ClientType clientType;
-	private final float intervalStart;
-	private final float intervalEnd;
+	private final float timeStart;
+	private final float timeEnd;
 
-	public Client(String name, ClientType clientType, float intervalStart, float intervalEnd) {
+	public Client(String name, ClientType clientType, float timeStart, float timeEnd) {
 		this.name = name;
 		this.clientType = clientType;
-		this.intervalStart = intervalStart;
-		this.intervalEnd = intervalEnd;
+		this.timeStart = timeStart;
+		this.timeEnd = timeEnd;
 	}
 
 	public String getName() {
@@ -42,8 +40,8 @@ public class Client {
 		return "Client{" +
 				"name='" + name + '\'' +
 				", clientType=" + clientType +
-				", intervalStart=" + intervalStart +
-				", intervalEnd=" + intervalEnd +
+				", intervalStart=" + timeStart +
+				", intervalEnd=" + timeEnd +
 				"}";
 	}
 
@@ -52,6 +50,6 @@ public class Client {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Client client = (Client) o;
-		return intervalStart == client.intervalStart && intervalEnd == client.intervalEnd && Objects.equals(name, client.name) && clientType == client.clientType;
+		return timeStart == client.timeStart && timeEnd == client.timeEnd && Objects.equals(name, client.name) && clientType == client.clientType;
 	}
 }

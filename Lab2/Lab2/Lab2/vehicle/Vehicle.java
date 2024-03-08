@@ -1,7 +1,7 @@
-package Lab2.VehiclePackage;
+package Lab2.Lab2.vehicle;
 
-import Lab2.ClientPackage.Client;
-import Lab2.DepotPackage.Depot;
+import Lab2.Lab2.client.Client;
+import Lab2.Lab2.depot.Depot;
 
 import java.util.ArrayList;
 import java.util.Objects;

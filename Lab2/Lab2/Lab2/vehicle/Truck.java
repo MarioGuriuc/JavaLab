@@ -1,6 +1,6 @@
-package Lab2.VehiclePackage;
+package Lab2.Lab2.vehicle;
 
-import Lab2.DepotPackage.Depot;
+import Lab2.Lab2.depot.Depot;
 
 public class Truck extends Vehicle {
 

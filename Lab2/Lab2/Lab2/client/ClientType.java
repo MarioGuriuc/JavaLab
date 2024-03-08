@@ -1,4 +1,4 @@
-package Lab2.ClientPackage;
+package Lab2.Lab2.client;
 
 public enum ClientType {
 	Regular,

@@ -1,14 +1,16 @@
-package Lab2.DepotPackage;
+package Lab2.Lab2.depot;
 
-import Lab2.VehiclePackage.Vehicle;
+import Lab2.Lab2.vehicle.Vehicle;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Depot {
 	private String name;
+	private ArrayList<Vehicle> vehicles;
 
 	public Depot(String name) {
+		vehicles = new ArrayList<>();
 		this.name = name;
 	}
 
