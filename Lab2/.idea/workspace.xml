@@ -5,36 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b55189d-8499-451d-ad4b-b29ad64895e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/blobs/version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/client/ClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/client/ClientType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/depot/Depot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/depot/Depot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/problem/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/problem/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/solution/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/solution/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/vehicle/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/vehicle/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/vehicle/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/vehicle/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2/vehicle/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/vehicle/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/.idea/copilot/chatSessions/xd.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2/Lab2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/client/ClientType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/depot/Depot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/problem/Problem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/solution/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/vehicle/Drone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/vehicle/Truck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Lab2/Lab2/vehicle/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/.idea/Lab2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/ClientPackage/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/ClientPackage/ClientType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/DepotPackage/Depot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/ProblemPackage/Problem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/SolutionPackage/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/SolutionPackage/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/VehiclePackage/Drone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/VehiclePackage/Truck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/out/production/Lab2/Lab2/VehiclePackage/Vehicle.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +82,7 @@
       <workItem from="1709878167485" duration="5932000" />
       <workItem from="1709909176500" duration="68000" />
       <workItem from="1709909258239" duration="69000" />
-      <workItem from="1709909353288" duration="1415000" />
+      <workItem from="1709909353288" duration="1746000" />
     </task>
     <servers />
   </component>
