@@ -1,3 +1,7 @@
+import attraction.*;
+import travelplan.TravelPlan;
+import trip.Trip;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;

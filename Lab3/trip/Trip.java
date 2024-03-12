@@ -1,7 +1,13 @@
+package trip;
+
+import attraction.Attraction;
+import attraction.Payable;
+import attraction.Visitable;
+
 import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
-
+// trip.Trip class represents a trip to a city with a list of attractions
 public class Trip {
 	private String cityName;
 	private List<Attraction> attractions;
@@ -10,7 +16,7 @@ public class Trip {
 		this.cityName = cityName;
 		this.attractions = new ArrayList<>(attractions);
 	}
-
+	// Prints visitable attractions for a specific day of the week
 	public void printVisitable(DayOfWeek dayOfWeek) {
 		ArrayList<Visitable> visitables = new ArrayList<>();
 		for (var attraction : attractions) {
@@ -30,8 +36,8 @@ public class Trip {
 		}
 		StringBuilder result = new StringBuilder();
 		for (var visitable : visitables) {
-			result.append(((Attraction) visitable).title).append('\n');
-			result.append(((Attraction) visitable).description).append('\n');
+			result.append(((Attraction) visitable).getTitle()).append('\n');
+			result.append(((Attraction) visitable).getDescription()).append('\n');
 			result.append("Visiting hour: ");
 			result.append(visitable.getOpeningHour(dayOfWeek).getHour()).append("\n\n");
 		}

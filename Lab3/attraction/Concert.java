@@ -1,6 +1,12 @@
+package attraction;
+
+import attraction.Attraction;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+// attraction.Concert class that represents a concert inherited from the attraction.Attraction class which also implements the attraction.Payable
+// interface
 public class Concert extends Attraction implements Payable {
 
 	private String artistName;

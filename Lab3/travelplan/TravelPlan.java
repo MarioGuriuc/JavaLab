@@ -1,5 +1,12 @@
+package travelplan;
+
+import attraction.Payable;
+import attraction.Visitable;
+import trip.Trip;
+
 import java.time.DayOfWeek;
 
+// travelplan.TravelPlan class generates a travel plan based on the provided trip
 public class TravelPlan {
 	private Trip trip;
 	private StringBuilder travelPlan;
@@ -8,6 +15,7 @@ public class TravelPlan {
 		this.trip = trip;
 	}
 
+	// Generates and returns a travel plan as a string, using the trip object
 	@Override
 	public String toString() {
 		if (travelPlan != null) {

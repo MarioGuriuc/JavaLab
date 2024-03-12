@@ -1,19 +1,37 @@
+package attraction;
+
+import attraction.Attraction;
+import attraction.Pair;
+import attraction.Visitable;
+
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Church extends Attraction implements Visitable {
-	Map<DayOfWeek, Pair<LocalTime, LocalTime>> timeInterval = new HashMap<>();
+// attraction.Statue class that represents a statue inherited from the attraction.Attraction class which also implements the attraction.Visitable
+// interface
+public class Statue extends Attraction implements Visitable {
+	Map<DayOfWeek, Pair<LocalTime, LocalTime>> timeInterval;
+	private String author;
 	private String yearBuilt;
 
-	public Church(String title, String description, String yearBuilt, DayOfWeek[] daysVisitable,
+	public Statue(String title, String description, String author, String yearBuilt, DayOfWeek[] daysVisitable,
 				  ArrayList<Pair<LocalTime, LocalTime>> hoursOpen) {
 		this.title = title;
 		this.description = description;
+		this.author = author;
 		this.yearBuilt = yearBuilt;
 		this.setTimeInterval(daysVisitable, hoursOpen);
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public String getYearBuilt() {
@@ -24,6 +42,7 @@ public class Church extends Attraction implements Visitable {
 		this.yearBuilt = yearBuilt;
 	}
 
+	// Sets the time interval representing the opening and closing hour
 	public void setTimeInterval(DayOfWeek[] daysVisitable, ArrayList<Pair<LocalTime, LocalTime>> hoursOpen) {
 		if (timeInterval == null) {
 			timeInterval = new HashMap<>();

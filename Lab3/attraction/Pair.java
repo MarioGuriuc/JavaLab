@@ -1,3 +1,6 @@
+package attraction;
+
+// attraction.Pair class implemented using generics which holds a pair of two elements
 public class Pair<K, V> {
 	private K first;
 	private V second;

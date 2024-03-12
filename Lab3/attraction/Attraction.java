@@ -1,9 +1,12 @@
+package attraction;
+
+// attraction.Attraction class represents an attraction with a title and description
 public abstract class Attraction {
 	protected String title;
 	protected String description;
 
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 
 	public void setTitle(String title) {
