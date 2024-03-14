@@ -6,9 +6,9 @@ import trip.Trip;
 
 import java.time.DayOfWeek;
 
-// travelplan.TravelPlan class generates a travel plan based on the provided trip
+// TravelPlan class generates a travel plan based on the provided trip
 public class TravelPlan {
-	private Trip trip;
+	private final Trip trip;
 	private StringBuilder travelPlan;
 
 	public TravelPlan(Trip trip) {
@@ -32,8 +32,8 @@ public class TravelPlan {
 				var timeInterval = visitable.getTimeInterval();
 				for (var day : allWeekDays) {
 					travelPlan.append(day).append(" ");
-					travelPlan.append(timeInterval.get(day).getFirst()).append(" to ");
-					travelPlan.append(timeInterval.get(day).getSecond());
+					travelPlan.append(timeInterval.get(day).getOpeningHour()).append(" to ");
+					travelPlan.append(timeInterval.get(day).getClosingHour());
 					travelPlan.append('\n');
 				}
 			}

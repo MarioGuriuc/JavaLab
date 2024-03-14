@@ -1,14 +1,12 @@
 package attraction;
 
-import attraction.Attraction;
-
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-// attraction.Church class that represents a church inherited from the attraction.Attraction class which also implements the attraction.Visitable
+// Church class that represents a church inherited from the Attraction class which also implements the Visitable
 // interface
 public class Church extends Attraction implements Visitable {
 	Map<DayOfWeek, Pair<LocalTime, LocalTime>> timeInterval = new HashMap<>();

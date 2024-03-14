@@ -1,16 +1,12 @@
 package attraction;
 
-import attraction.Attraction;
-import attraction.Pair;
-import attraction.Visitable;
-
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-// attraction.Statue class that represents a statue inherited from the attraction.Attraction class which also implements the attraction.Visitable
+// Statue class that represents a statue inherited from the Attraction class which also implements the Visitable
 // interface
 public class Statue extends Attraction implements Visitable {
 	Map<DayOfWeek, Pair<LocalTime, LocalTime>> timeInterval;

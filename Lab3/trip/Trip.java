@@ -6,8 +6,10 @@ import attraction.Visitable;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-// trip.Trip class represents a trip to a city with a list of attractions
+
+// Trip class represents a trip to a city with a list of attractions
 public class Trip {
 	private String cityName;
 	private List<Attraction> attractions;
@@ -16,6 +18,7 @@ public class Trip {
 		this.cityName = cityName;
 		this.attractions = new ArrayList<>(attractions);
 	}
+
 	// Prints visitable attractions for a specific day of the week
 	public void printVisitable(DayOfWeek dayOfWeek) {
 		ArrayList<Visitable> visitables = new ArrayList<>();
@@ -24,16 +27,7 @@ public class Trip {
 				visitables.add((Visitable) attraction);
 			}
 		}
-		for (int i = 0; i < visitables.size(); i++) {
-			for (int j = i + 1; j < visitables.size(); j++) {
-				Visitable visitableI = visitables.get(i);
-				Visitable visitableJ = visitables.get(j);
-				if (visitableI.getOpeningHour(dayOfWeek).isAfter(visitableJ.getOpeningHour(dayOfWeek))) {
-					visitables.set(i, visitableJ);
-					visitables.set(j, visitableI);
-				}
-			}
-		}
+		visitables.sort(Comparator.comparing((Visitable v) -> v.getOpeningHour(dayOfWeek)));
 		StringBuilder result = new StringBuilder();
 		for (var visitable : visitables) {
 			result.append(((Attraction) visitable).getTitle()).append('\n');
