@@ -21,15 +21,15 @@ public class Trip {
 
 	// Prints visitable attractions for a specific day of the week
 	public void printVisitable(DayOfWeek dayOfWeek) {
-		ArrayList<Visitable> visitables = new ArrayList<>();
+		ArrayList<Visitable> visitableArrayList = new ArrayList<>();
 		for (var attraction : attractions) {
 			if (attraction instanceof Visitable && !(attraction instanceof Payable)) {
-				visitables.add((Visitable) attraction);
+				visitableArrayList.add((Visitable) attraction);
 			}
 		}
-		visitables.sort(Comparator.comparing((Visitable v) -> v.getOpeningHour(dayOfWeek)));
+		visitableArrayList.sort(Comparator.comparing((Visitable v) -> v.getOpeningHour(dayOfWeek)));
 		StringBuilder result = new StringBuilder();
-		for (var visitable : visitables) {
+		for (var visitable : visitableArrayList) {
 			result.append(((Attraction) visitable).getTitle()).append('\n');
 			result.append(((Attraction) visitable).getDescription()).append('\n');
 			result.append("Visiting hour: ");

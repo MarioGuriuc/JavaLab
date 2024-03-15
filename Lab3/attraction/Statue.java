@@ -2,8 +2,8 @@ package attraction;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // Statue class that represents a statue inherited from the Attraction class which also implements the Visitable
@@ -14,7 +14,7 @@ public class Statue extends Attraction implements Visitable {
 	private String yearBuilt;
 
 	public Statue(String title, String description, String author, String yearBuilt, DayOfWeek[] daysVisitable,
-				  ArrayList<Pair<LocalTime, LocalTime>> hoursOpen) {
+				  List<Pair<LocalTime, LocalTime>> hoursOpen) {
 		this.title = title;
 		this.description = description;
 		this.author = author;
@@ -39,7 +39,7 @@ public class Statue extends Attraction implements Visitable {
 	}
 
 	// Sets the time interval representing the opening and closing hour
-	public void setTimeInterval(DayOfWeek[] daysVisitable, ArrayList<Pair<LocalTime, LocalTime>> hoursOpen) {
+	public void setTimeInterval(DayOfWeek[] daysVisitable, List<Pair<LocalTime, LocalTime>> hoursOpen) {
 		if (timeInterval == null) {
 			timeInterval = new HashMap<>();
 		}
