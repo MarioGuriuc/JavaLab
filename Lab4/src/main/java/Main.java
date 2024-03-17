@@ -1,11 +1,10 @@
 import person.Driver;
 import person.Passenger;
 import person.Person;
+import problem.Problem;
+import problem.Solution;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main
@@ -24,15 +23,37 @@ public class Main
 				.map(person -> (Passenger) person)
 				.collect(Collectors.toSet());
 
+		System.out.println("Drivers sorted by age:");
+
 		driverList.stream()
 				.sorted(Comparator.comparingInt(Person::getAge))
 				.forEach(System.out::println);
+
+		System.out.println();
+		System.out.println("Passengers sorted by name:");
+
 		passengerList.stream()
 				.sorted(Comparator.comparing(Person::getName))
 				.forEach(System.out::println);
+		System.out.println();
+
+		//Problem problem = RandomProblemGenerator.generateProblem();
+		Problem problem = new Problem(driverList, new ArrayList<>(passengerList));
+
+		Map<String, List<Person>> map = problem.getDestinationToPersonMap();
+		System.out.println();
+		System.out.println("Destination to person map:");
+		for (var i : map.entrySet())
+		{
+			System.out.println(i.getKey() + " -> " + i.getValue());
+		}
+		System.out.println();
+
+		Solution solution = new Solution(problem);
+		solution.getSolution();
 	}
 
-	private static LinkedList<Person> getPeople()
+	private static List<Person> getPeople()
 	{
 		Person driver1 = new Driver("John", "New York", 18);
 		Person driver2 = new Driver("Mike", "Los Angeles", 30);
@@ -45,7 +66,7 @@ public class Main
 		Person passenger4 = new Passenger("Trent", "San Francisco", 35);
 		Person passenger5 = new Passenger("Carol", "Seattle", 40);
 
-		return new LinkedList<>(List.of(driver1, driver2, driver3, driver4, driver5, passenger1, passenger2,
+		return (List.of(driver1, driver2, driver3, driver4, driver5, passenger1, passenger2,
 				passenger3, passenger4, passenger5));
 	}
 }
