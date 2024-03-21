@@ -4,8 +4,16 @@ import person.Driver;
 import person.Passenger;
 import person.Person;
 
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+/**
+ * A class to represent a solution for the problem of matching drivers and passengers,
+ * such that the number of matching is maximum.
+ * @see Problem
+ * @see Driver
+ * @see Passenger
+ */
 public class Solution
 {
 	Problem problem;

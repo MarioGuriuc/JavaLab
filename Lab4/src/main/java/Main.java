@@ -35,6 +35,7 @@ public class Main
 		passengerList.stream()
 				.sorted(Comparator.comparing(Person::getName))
 				.forEach(System.out::println);
+
 		System.out.println();
 
 		//Problem problem = RandomProblemGenerator.generateProblem();

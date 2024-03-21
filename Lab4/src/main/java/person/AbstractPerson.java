@@ -1,5 +1,9 @@
 package person;
 
+/**
+ * An abstract class to represent a person.
+ * @see Person
+ */
 public abstract class AbstractPerson implements Person
 {
 	protected String name;

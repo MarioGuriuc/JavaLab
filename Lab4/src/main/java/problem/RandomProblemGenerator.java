@@ -7,6 +7,11 @@ import person.Passenger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class to generate a random problem for matching drivers and passengers.
+ * @see Problem
+ */
+
 public class RandomProblemGenerator
 {
 	public static Problem generateProblem()

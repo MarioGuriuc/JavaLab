@@ -1,5 +1,9 @@
 package person;
 
+/**
+ * A class to represent a passenger.
+ * @see AbstractPerson
+ */
 public class Passenger extends AbstractPerson
 {
 	public Passenger(String name, String destination, int age)
@@ -10,7 +14,7 @@ public class Passenger extends AbstractPerson
 	@Override
 	public String toString()
 	{
-		return "Passenger{" +
+		return "Passenger {" +
 				"name='" + name + '\'' +
 				", destination='" + destination + '\'' +
 				", age=" + age +

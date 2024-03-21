@@ -7,6 +7,14 @@ import person.Person;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * A class to represent a problem which scope is to match drivers and passengers,
+ * such that the number of matching is maximum.
+ * @see Person
+ * @see Driver
+ * @see Passenger
+ */
+
 public class Problem
 {
 	List<Driver> drivers;
