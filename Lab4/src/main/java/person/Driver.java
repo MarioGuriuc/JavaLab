@@ -2,6 +2,7 @@ package person;
 
 /**
  * A class to represent a driver.
+ *
  * @see AbstractPerson
  */
 public class Driver extends AbstractPerson
