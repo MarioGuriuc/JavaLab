@@ -1,15 +1,19 @@
 package person;
 
+/**
+ * An interface to represent a person.
+ */
 public interface Person
 {
 	String getName();
 
 	void setName(String name);
 
-	 String getDestination();
+	String getDestination();
 
-	 void setDestination(String destination);
-	 int getAge();
+	void setDestination(String destination);
 
-	 void setAge(int age);
+	int getAge();
+
+	void setAge(int age);
 }
