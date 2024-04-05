@@ -2,9 +2,10 @@ package person;
 
 /**
  * An abstract class to represent a person.
+ *
  * @see Person
  */
-public abstract class AbstractPerson implements Person
+public abstract class AbstractPerson implements Person, Comparable<Person>
 {
 	protected String name;
 	protected String destination;
@@ -45,5 +46,11 @@ public abstract class AbstractPerson implements Person
 	public void setAge(int age)
 	{
 		this.age = age;
+	}
+
+	@Override
+	public int compareTo(Person o)
+	{
+		return o.getName().compareTo(name);
 	}
 }

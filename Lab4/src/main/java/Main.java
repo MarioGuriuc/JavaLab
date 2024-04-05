@@ -16,12 +16,12 @@ public class Main
 		List<Driver> driverList = group.stream()
 				.filter(person -> person instanceof Driver)
 				.map(person -> (Driver) person)
-				.toList();
+				.collect(Collectors.toCollection(ArrayList::new));
 
 		Set<Passenger> passengerList = group.stream()
 				.filter(person -> person instanceof Passenger)
 				.map(person -> (Passenger) person)
-				.collect(Collectors.toSet());
+				.collect(Collectors.toCollection(TreeSet::new));
 
 		System.out.println("Drivers sorted by age:");
 

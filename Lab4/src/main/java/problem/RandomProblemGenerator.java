@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * A class to generate a random problem for matching drivers and passengers.
+ *
  * @see Problem
  */
 

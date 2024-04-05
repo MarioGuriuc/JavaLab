@@ -2,6 +2,7 @@ package person;
 
 /**
  * A class to represent a passenger.
+ *
  * @see AbstractPerson
  */
 public class Passenger extends AbstractPerson

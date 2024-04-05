@@ -4,12 +4,15 @@ import person.Driver;
 import person.Passenger;
 import person.Person;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
  * A class to represent a problem which scope is to match drivers and passengers,
  * such that the number of matching is maximum.
+ *
  * @see Person
  * @see Driver
  * @see Passenger
@@ -25,6 +28,7 @@ public class Problem
 	{
 		this.drivers = drivers;
 		this.passengers = passengers;
+
 		group = new ArrayList<>();
 		group.addAll(drivers);
 		group.addAll(passengers);
@@ -34,7 +38,7 @@ public class Problem
 	{
 		return drivers.stream()
 				.map(Driver::getDestination)
-				.toList();
+				.collect(Collectors.toList());
 	}
 
 	public Map<String, List<Person>> getDestinationToPersonMap()
