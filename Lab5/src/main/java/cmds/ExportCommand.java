@@ -1,11 +1,16 @@
 package cmds;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import exceps.IllegalNumberOfArgumentsException;
 import exceps.NotLoggedInException;
+import exceps.TypeOfCommand;
 import filesdiradmin.Repository;
 import filesdiradmin.Shell;
+import person.Person;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
@@ -19,36 +24,29 @@ public class ExportCommand implements Command
 	}
 
 	@Override
-	public void execute()
+	public void execute() throws IOException
 	{
-		try
+		if (!shell.getLoggedIn())
 		{
-			if (!shell.getLoggedIn())
-			{
-				throw new NotLoggedInException();
-			}
-			Repository repository = shell.getRepo();
-			List<File> files = repository.getFiles();
-
-			String filename = "repository.json";
-
-			export(files, filename);
-
-			System.out.println("Export completed successfully.");
+			throw new NotLoggedInException();
 		}
-		catch (IOException e)
+		if (shell.getCommands().length != 1)
 		{
-			System.err.println("Error exporting repository: " + e.getMessage());
+			throw new IllegalNumberOfArgumentsException(TypeOfCommand.EXPORT);
 		}
+		Repository repository = shell.getRepo();
+		Person user = repository.getPerson();
+
+		String filePath = "src/main/MASTER/" + user.name() + user.ID() + "/json_export.json";
+
+		System.out.println("Export completed successfully.");
+		System.out.println("Exported to: " + filePath);
 	}
 
-	private void export(List<File> files, String filename) throws IOException
+	private void export(String filePath) throws IOException
 	{
-		List<String> filePaths = files.stream()
-				.map(File::getAbsolutePath)
-				.toList();
-
-		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.writeValue(new File(filename), filePaths);
+		ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+		FileWriter fileWriter = new FileWriter(filePath);
+		objectMapper.writeValue(fileWriter, shell.getRepo());
 	}
 }

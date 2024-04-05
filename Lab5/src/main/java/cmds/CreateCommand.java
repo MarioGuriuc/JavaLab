@@ -1,10 +1,12 @@
 package cmds;
 
+import exceps.IdIsNotUniqueException;
+import exceps.IllegalNumberOfArgumentsException;
+import exceps.TypeOfCommand;
 import filesdiradmin.Shell;
 import person.Person;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class CreateCommand implements Command
 {
@@ -16,23 +18,23 @@ public class CreateCommand implements Command
 	}
 
 	@Override
-	public void execute()
+	public void execute() throws IOException
 	{
-		try
+		if (shell.getCommands().length != 3)
 		{
-			System.out.print("Enter a name: ");
-			String name = shell.getScanner().nextLine();
-			System.out.print("Enter your ID: ");
-			String ID = shell.getScanner().nextLine();
-			Person person = new Person(name, Integer.parseInt(ID));
-			String path = "src/main/MASTER/" + person.name() + person.ID();
-			Command.createDirectory(path);
-			System.out.println("Repository created successfully");
-			System.out.println("To access your repository, login with your name and ID");
+			throw new IllegalNumberOfArgumentsException(TypeOfCommand.CREATE);
 		}
-		catch (IOException e)
+		String name = shell.getCommands()[1];
+		String ID = shell.getCommands()[2];
+		if (shell.getIdStorage().containsId(Integer.parseInt(ID)))
 		{
-			System.out.println(e.getMessage());
+			throw new IdIsNotUniqueException();
 		}
+		Person person = new Person(name, Integer.parseInt(ID));
+		String path = "src/main/MASTER/" + person.name() + person.ID();
+		shell.getIdStorage().addId(person.ID());
+		Command.createDirectory(path);
+		System.out.println("Repository created successfully");
+		System.out.println("To access your repository, login with your name and ID");
 	}
 }

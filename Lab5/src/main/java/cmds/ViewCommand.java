@@ -1,8 +1,8 @@
 package cmds;
 
-import cmds.Command;
 import exceps.FileDoesNotExistException;
-import filesdiradmin.Document;
+import exceps.IllegalNumberOfArgumentsException;
+import exceps.TypeOfCommand;
 import filesdiradmin.Shell;
 
 import java.awt.*;
@@ -21,25 +21,20 @@ public class ViewCommand implements Command
 	}
 
 	@Override
-	public void execute()
+	public void execute() throws IOException
 	{
-		try
+		if (shell.getCommands().length != 2)
 		{
-			shell.getRepo().listDocuments();
-			System.out.print("Enter a file (name + extension): ");
-			String pathStr = shell.getRepo().getPath().toString();
-			String file = shell.getScanner().nextLine();
-			pathStr = pathStr + "/" + file;
-			Path filePath = Paths.get(pathStr);
-			if (!Files.exists(filePath))
-			{
-				throw new FileDoesNotExistException();
-			}
-			Desktop.getDesktop().open(filePath.toFile());
+			throw new IllegalNumberOfArgumentsException(TypeOfCommand.VIEW);
 		}
-		catch (IOException e)
+		String pathStr = shell.getRepo().getPath().toString();
+		String file = shell.getCommands()[1];
+		pathStr = pathStr + "/" + file;
+		Path filePath = Paths.get(pathStr);
+		if (!Files.exists(filePath))
 		{
-			System.out.println("Error: " + e.getMessage());
+			throw new FileDoesNotExistException();
 		}
+		Desktop.getDesktop().open(filePath.toFile());
 	}
 }

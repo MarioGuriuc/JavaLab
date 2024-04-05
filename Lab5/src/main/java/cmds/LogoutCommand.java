@@ -14,22 +14,16 @@ public class LogoutCommand implements Command
 	}
 
 	@Override
-	public void execute()
+	public void execute() throws NotLoggedInException
 	{
-		try
+		if (!shell.getLoggedIn())
 		{
-			if (!shell.getLoggedIn())
-			{
-				throw new NotLoggedInException();
-			}
-			shell.setRepo(null);
-			shell.setLoggedIn(false);
-			System.out.println("Logged out successfully");
+			throw new NotLoggedInException();
 		}
-		catch (NotLoggedInException e)
-		{
-			System.out.println("Error: " + e.getMessage());
-		}
+		shell.setRepo(new Repository());
+		shell.setLoggedIn(false);
+		shell.setCurrentDirectory("MASTER/");
+		System.out.println("Logged out successfully");
 	}
 }
 

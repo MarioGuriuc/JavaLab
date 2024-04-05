@@ -1,6 +1,8 @@
 package cmds;
 
+import exceps.IllegalNumberOfArgumentsException;
 import exceps.NotLoggedInException;
+import exceps.TypeOfCommand;
 import filesdiradmin.Shell;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -23,20 +25,17 @@ public class ReportCommand implements Command
 	}
 
 	@Override
-	public void execute()
+	public void execute() throws IOException
 	{
-		try
+		if (!shell.getLoggedIn())
 		{
-			if (!shell.getLoggedIn())
-			{
-				throw new NotLoggedInException();
-			}
-			generateReport();
+			throw new NotLoggedInException();
 		}
-		catch (IOException e)
+		if (shell.getCommands().length != 1)
 		{
-			System.out.println("Error: " + e.getMessage());
+			throw new IllegalNumberOfArgumentsException(TypeOfCommand.REPORT);
 		}
+		generateReport();
 	}
 
 	private void generateReport() throws IOException

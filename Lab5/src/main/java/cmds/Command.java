@@ -4,6 +4,7 @@ import exceps.DirectoryExistsException;
 import exceps.DirectoryNotCreatedException;
 
 import java.io.File;
+import java.io.IOException;
 
 public interface Command
 {
@@ -24,5 +25,5 @@ public interface Command
 		}
 	}
 
-	void execute();
+	void execute() throws IOException;
 }

@@ -2,36 +2,42 @@ package filesdiradmin;
 
 import cmds.*;
 import exceps.InvalidCommandException;
+import person.IdStorage;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Shell
 {
-	Scanner scanner;
 	private Repository repo;
 	private Boolean loggedIn;
+	private String[] commands;
+	private String currentDirectory;
+	private IdStorage idStorage;
 
 	public Shell()
 	{
 		repo = new Repository();
-		scanner = new Scanner(System.in);
 		loggedIn = false;
+		currentDirectory = "MASTER/";
 	}
 
 	public void run()
 	{
+		initialization();
 		while (true)
 		{
-			System.out.print("Enter a command: ");
-			Scanner scanner = new Scanner(System.in);
-			String command = scanner.nextLine();
-
 			try
 			{
-				switch (command.toLowerCase())
+				System.out.print(currentDirectory + " > ");
+				Scanner scanner = new Scanner(System.in);
+				String command = scanner.nextLine();
+				commands = command.split(" ");
+				command = commands[0];
+				switch (command)
 				{
 					case "exit" -> System.exit(0);
+					case "help" -> new HelpCommand().execute();
 					case "logout" -> new LogoutCommand(this).execute();
 					case "login" -> new LoginCommand(this).execute();
 					case "create" -> new CreateCommand(this).execute();
@@ -45,14 +51,23 @@ public class Shell
 			}
 			catch (IOException e)
 			{
-				System.out.println("Error: " + e.getMessage());
+				System.out.println("Fatal: " + e.getMessage());
 			}
 		}
 	}
 
-	public Scanner getScanner()
+	private void initialization()
 	{
-		return scanner;
+		try
+		{
+			idStorage = new IdStorage();
+		}
+		catch (IOException e)
+		{
+			System.out.println("Fatal: " + e.getMessage());
+		}
+		new HelpCommand().execute();
+		System.out.println();
 	}
 
 	public Repository getRepo()
@@ -73,5 +88,25 @@ public class Shell
 	public void setLoggedIn(Boolean loggedIn)
 	{
 		this.loggedIn = loggedIn;
+	}
+
+	public String[] getCommands()
+	{
+		return commands;
+	}
+
+	public String getCurrentDirectory()
+	{
+		return currentDirectory;
+	}
+
+	public void setCurrentDirectory(String currentDirectory)
+	{
+		this.currentDirectory = currentDirectory;
+	}
+
+	public IdStorage getIdStorage()
+	{
+		return idStorage;
 	}
 }

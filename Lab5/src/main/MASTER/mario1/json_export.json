@@ -1,0 +1,16 @@
+{
+  "person": {
+    "name": "mario",
+    "ID": 1
+  },
+  "path": "file:///D:/JavaLab/Lab5/src/main/MASTER/mario1/",
+  "files": [
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\allclasses-index.html",
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\directory_report",
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\glass.png",
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\json_export.json",
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\script.js",
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\search.html",
+    "D:\\JavaLab\\Lab5\\src\\main\\MASTER\\mario1\\x.png"
+  ]
+}

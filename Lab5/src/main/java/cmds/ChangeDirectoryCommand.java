@@ -1,6 +1,8 @@
 package cmds;
 
+import exceps.IllegalNumberOfArgumentsException;
 import exceps.NotLoggedInException;
+import exceps.TypeOfCommand;
 import filesdiradmin.Repository;
 import filesdiradmin.Shell;
 
@@ -16,32 +18,31 @@ public class ChangeDirectoryCommand implements Command
 	}
 
 	@Override
-	public void execute()
+	public void execute() throws IOException
 	{
-		try
+		if (!shell.getLoggedIn())
 		{
-			if (!shell.getLoggedIn())
-			{
-				throw new NotLoggedInException();
-			}
-			System.out.print("Enter a directory: ");
-			System.out.println("Enter '..' to go back a directory");
-			String directory = shell.getScanner().nextLine();
-			String path = shell.getRepo().getPath().toString();
-			if (!directory.equals(".."))
-			{
-				path = path + "/" + directory;
-			}
-			else
-			{
-				path = path.substring(0, path.lastIndexOf("/"));
-			}
-			shell.setRepo(new Repository(path, shell.getRepo().getPerson()));
-			System.out.println("Changed directory to: " + shell.getRepo().getPath());
+			throw new NotLoggedInException();
 		}
-		catch (IOException e)
+		if (shell.getCommands().length != 2)
 		{
-			System.out.println("Error: " + e.getMessage());
+			throw new IllegalNumberOfArgumentsException(TypeOfCommand.CD);
 		}
+		String directory = shell.getCommands()[1];
+		String path = shell.getRepo().getPath().toString();
+		String currentDirectory = shell.getCurrentDirectory();
+		if (!directory.equals(".."))
+		{
+			path = path + "/" + directory;
+			currentDirectory = (currentDirectory + directory + "/");
+		}
+		else
+		{
+			path = path.substring(0, path.lastIndexOf("/"));
+			currentDirectory = ("/" + currentDirectory.substring(0, currentDirectory.lastIndexOf("/")));
+		}
+		shell.setCurrentDirectory(currentDirectory);
+		shell.setRepo(new Repository(path, shell.getRepo().getPerson()));
+		System.out.println("Changed directory to: " + shell.getRepo().getPath());
 	}
 }

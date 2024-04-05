@@ -1,9 +1,13 @@
 package cmds;
 
 import exceps.AlreadyLoggedInException;
+import exceps.IllegalNumberOfArgumentsException;
+import exceps.RepositoryDoesNotExist;
+import exceps.TypeOfCommand;
 import filesdiradmin.Shell;
 import person.Person;
 
+import java.io.File;
 import java.io.IOException;
 
 public class LoginCommand implements Command
@@ -15,30 +19,28 @@ public class LoginCommand implements Command
 		this.shell = shell;
 	}
 
-	public void execute()
+	public void execute() throws IOException
 	{
-		try
+		if (shell.getLoggedIn())
 		{
-			if (shell.getLoggedIn())
-			{
-				throw new AlreadyLoggedInException();
-			}
-			else
-			{
-				System.out.print("Enter the name: ");
-				String name = shell.getScanner().nextLine();
-				System.out.print("Enter the ID: ");
-				String ID = shell.getScanner().nextLine();
-				int IDint = Integer.parseInt(ID);
-				String path = "src/main/MASTER/" + name + ID;
-				shell.getRepo().setPath(path);
-				shell.getRepo().setPerson(new Person(name, IDint));
-				shell.setLoggedIn(true);
-			}
+			throw new AlreadyLoggedInException();
 		}
-		catch (IOException e)
+		if (shell.getCommands().length != 3)
 		{
-			System.out.println("Error: " + e.getMessage());
+			throw new IllegalNumberOfArgumentsException(TypeOfCommand.LOGIN);
 		}
+		String name = shell.getCommands()[1].toLowerCase();
+		String ID = shell.getCommands()[2];
+		int IDint = Integer.parseInt(ID);
+		String path = "src/main/MASTER/" + name + ID;
+		File repoPath = new File(path);
+		if (!repoPath.exists())
+		{
+			throw new RepositoryDoesNotExist();
+		}
+		shell.getRepo().setPath(path);
+		shell.setCurrentDirectory(shell.getCurrentDirectory() + name + ID);
+		shell.getRepo().setPerson(new Person(name, IDint));
+		shell.setLoggedIn(true);
 	}
 }

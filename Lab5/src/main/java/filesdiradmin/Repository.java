@@ -18,7 +18,7 @@ public class Repository
 	private Person person;
 	private Path path;
 
-	public Repository(String path, Person person) throws RepositoryDoesNotExist
+	public Repository(String path, Person person) throws IOException
 	{
 		this.person = person;
 		this.path = Paths.get(path);
@@ -33,23 +33,18 @@ public class Repository
 		this.path = Paths.get("src/main/MASTER");
 	}
 
-	public void listDocuments()
+	public void listDocuments() throws IOException
 	{
-		try (DirectoryStream<Path> stream = Files.newDirectoryStream(path))
+		DirectoryStream<Path> stream = Files.newDirectoryStream(path);
+		if (stream == null)
 		{
-			if (stream == null)
-			{
-				throw new EmptyDirectoryException();
-			}
-			for (Path personDirectory : stream)
-			{
-				System.out.println(personDirectory.getFileName());
-			}
+			throw new EmptyDirectoryException();
 		}
-		catch (IOException e)
+		for (Path personDirectory : stream)
 		{
-			System.out.println("Error: " + e.getMessage());
+			System.out.println(personDirectory.getFileName());
 		}
+		stream.close();
 	}
 
 	public Path getPath()
