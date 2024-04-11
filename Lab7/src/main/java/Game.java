@@ -73,7 +73,6 @@ public class Game
 			System.out.println(player + " has the following tokens: " + player.getSequences());
 			makeSequences(player, player.getSequences());
 			System.out.println(player + " has formed a sequence of length: " + getPlayerScores().get(player));
-			checkAndUpdateMaxSequence(getPlayerScores().get(player));
 		}
 
 		checkWinner();
@@ -89,11 +88,6 @@ public class Game
 				System.exit(1);
 			}
 		}
-	}
-
-	public synchronized void checkAndUpdateMaxSequence(int sequenceLength)
-	{
-		maxSequenceLength = Math.max(maxSequenceLength, sequenceLength);
 	}
 
 	void checkWinner()
