@@ -41,7 +41,8 @@ public class DrawingPanel
 		double startX = (width - columns * cellWidth) / 2;
 		double startY = (height - rows * cellHeight) / 2;
 
-		addLinesToGrid(gridPane, cellWidth, cellHeight, startX, startY);
+		addLinesToGrid(gridPane, cellWidth, cellHeight, startX, startY, true);
+		addLinesToGrid(gridPane, cellWidth, cellHeight, startX, startY, false);
 		addCirclesToGrid(gridPane, cellWidth, cellHeight, startX, startY, circleRadius);
 		disableCirclesWithoutThickLineAdjacent();
 	}
@@ -69,34 +70,48 @@ public class DrawingPanel
 		return circle;
 	}
 
-	private static void addLinesToGrid(AnchorPane gridPane, double cellWidth, double cellHeight, double startX, double startY)
+	private static void addLinesToGrid(AnchorPane gridPane, double cellWidth, double cellHeight, double startX, double startY, boolean isHorizontal)
 	{
 		Random random = new Random();
-		for (int i = 0; i <= rows; i++)
+
+		int rowCount = rows;
+		int colCount = columns;
+		if (isHorizontal)
 		{
-			for (int j = 0; j < columns; j++)
-			{
-				double y = startY + (i * cellHeight);
-				double x1 = startX + (j * cellWidth);
-				double x2 = startX + ((j + 1) * cellWidth);
-				Line line = createLine(x1, y, x2, y, random.nextBoolean() ? THICKNESS_LARGE : THICKNESS_SMALL);
-				lines.add(line);
-				gridPane.getChildren().add(line);
-			}
+			rowCount = rows + 1;
+		}
+		else
+		{
+			colCount = columns + 1;
 		}
 
-		for (int j = 0; j <= columns; j++)
+		for (int i = 0; i < rowCount; i++)
 		{
-			for (int i = 0; i < rows; i++)
+			for (int j = 0; j < colCount; j++)
 			{
-				double x = startX + (j * cellWidth);
-				double y1 = startY + (i * cellHeight);
-				double y2 = startY + ((i + 1) * cellHeight);
-				Line line = createLine(x, y1, x, y2, random.nextBoolean() ? THICKNESS_LARGE : THICKNESS_SMALL);
-				lines.add(line);
-				gridPane.getChildren().add(line);
+				double x1, y1, x2, y2;
+				if (isHorizontal)
+				{
+					y1 = y2 = startY + (i * cellHeight);
+					x1 = startX + (j * cellWidth);
+					x2 = startX + ((j + 1) * cellWidth);
+				}
+				else
+				{
+					x1 = x2 = startX + (j * cellWidth);
+					y1 = startY + (i * cellHeight);
+					y2 = startY + ((i + 1) * cellHeight);
+				}
+				addLine(gridPane, x1, y1, x2, y2, random.nextBoolean() ? THICKNESS_LARGE : THICKNESS_SMALL);
 			}
 		}
+	}
+
+	private static void addLine(AnchorPane gridPane, double startX, double startY, double endX, double endY, double strokeWidth)
+	{
+		Line line = createLine(startX, startY, endX, endY, strokeWidth);
+		lines.add(line);
+		gridPane.getChildren().add(line);
 	}
 
 	private static Line createLine(double startX, double startY, double endX, double endY, double strokeWidth)
@@ -114,7 +129,6 @@ public class DrawingPanel
 			circle.setFill((Game.turn % 2 == 0) ? Game.PLAYER_2_COLOR : Game.PLAYER_1_COLOR);
 			Game.turn++;
 		}
-		disableCirclesWithoutThickLineAdjacent();
 	}
 
 	private static void disableCirclesWithoutThickLineAdjacent()
