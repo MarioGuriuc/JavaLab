@@ -1,3 +1,5 @@
+package game;
+
 public class Pair<K>
 {
 	private K first;
