@@ -1,3 +1,5 @@
+import game.Game;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +20,7 @@ public class TestGame
 			int maxPlayers = random.nextInt(50);
 			String[] names = new String[maxPlayers];
 			Arrays.fill(names, name + i);
-			games.add(new Game(maxPlayers, names));
+			games.add(new Game(maxPlayers, names, 1000));
 			games.get(i).play();
 		}
 	}

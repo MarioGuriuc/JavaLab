@@ -3,13 +3,15 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player implements Runnable {
+public class Player implements Runnable
+{
     private final String name;
     private final Game game;
     private final List<Token> tokens;
     private boolean running;
 
-    public Player(String name, Game game) {
+    public Player(String name, Game game)
+    {
         this.name = name;
         this.game = game;
         tokens = new ArrayList<>();
@@ -17,50 +19,61 @@ public class Player implements Runnable {
     }
 
     @Override
-    public synchronized void run() {
-        while (running) {
+    public synchronized void run()
+    {
+        while (running)
+        {
             this.pickToken();
         }
     }
 
-    public void pickToken() {
-        synchronized (game) {
-            if (game.getBag().getTokens().isEmpty()) {
+    public void pickToken()
+    {
+        synchronized (game)
+        {
+            if (game.getBag().getTokens().isEmpty())
+            {
                 stopPlayer();
             }
 
-            while (game.getPlayersTurn() != this) {
-                try {
+            while (game.getPlayersTurn() != this)
+            {
+                try
+                {
                     game.wait();
-                } catch (InterruptedException e) {
+                } catch (InterruptedException e)
+                {
                     System.exit(1);
                 }
             }
             game.extractToken(this);
-            if (game.getPlayerScores().get(this) == game.getBag().getMaxTokens()) {
-                game.stopGame();
-            }
-            try {
-                Thread.sleep(0);
-            } catch (InterruptedException e) {
+            try
+            {
+                Thread.sleep(100);
+            } catch (InterruptedException e)
+            {
                 System.exit(1);
             }
         }
     }
 
-    public List<Token> getTokens() {
+    public List<Token> getTokens()
+    {
         return tokens;
     }
 
-    public void stopPlayer() {
-        synchronized (game) {
+    public void stopPlayer()
+    {
+        synchronized (game)
+        {
             running = false;
             game.notifyAll();
         }
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return name;
     }
 }
