@@ -22,5 +22,4 @@ public class BookAuthors
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "AUTHOR_ID", nullable = false)
     private Author author;
-
 }

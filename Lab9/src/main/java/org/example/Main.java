@@ -99,8 +99,7 @@ public class Main
         System.out.print("Enter the author's name: ");
         String name = scanner.nextLine();
 
-        AuthorDAO authorDAO = new AuthorDAO();
-        authorDAO.add(new Author(name));
+        authorRepository.save(new Author(name));
     }
 
     private void printHelp()

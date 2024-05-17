@@ -3,9 +3,6 @@ package org.example.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -29,11 +26,4 @@ public class Author
 
     @Id
     private Long id;
-
-    @ManyToMany
-    @JoinTable(name = "BOOK_AUTHORS",
-            joinColumns = @JoinColumn(name = "AUTHOR_ID"),
-            inverseJoinColumns = @JoinColumn(name = "BOOK_ID"))
-    private Set<Book> books = new LinkedHashSet<>();
-
 }
