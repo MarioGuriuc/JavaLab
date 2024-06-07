@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6319ba0b-d1bf-4b87-b851-1cbc1308d917" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerAplication/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Connection/ServerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/GameData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Handler/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Handler/ActionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Handler/PlayerBoardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Handler/PlayerBoardHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Handler/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Handler/ServerCommandsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/battleship/clientaplication/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/battleship/clientaplication/ClientApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Battleship.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Ok.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/GameData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Handler/ActionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Handler/ActionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Handler/PlayerBoardHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Handler/PlayerBoardHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Handler/ServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Handler/ServerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/battleship/clientaplication/ClientApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/src/main/java/Battleship/MultiThreadedServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerAplication/src/main/java/Battleship/MultiThreadedServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/src/main/java/Data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerAplication/src/main/java/Data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/src/main/java/Database/GameDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/src/main/java/Database/PlayerDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/src/main/java/Handler/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerAplication/src/main/java/Handler/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/src/main/resources/Settings-PNG-Images.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/target/classes/Battleship/MultiThreadedServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerAplication/target/classes/Battleship/MultiThreadedServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/target/classes/Data/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerAplication/target/classes/Data/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/target/classes/Database/GameDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/target/classes/Database/PlayerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerAplication/target/classes/Handler/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerAplication/target/classes/Handler/ClientHandler.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarioGuriuc&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:SpiridonVlad/Battleship.git&quot;,
+    &quot;accountId&quot;: &quot;421fd97a-abd6-4a92-a9b8-65ccecd8d170&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2gxzwWiLVJwnPFXmKDJMeKCAiHp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ClientApp.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/mario/Desktop/vlad/Battleship",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ClientApp" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="battleship.clientaplication.ClientApp" />
+      <module name="ClientAplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6319ba0b-d1bf-4b87-b851-1cbc1308d917" name="Changes" comment="" />
+      <created>1716654255883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716654255883</updated>
+      <workItem from="1716654256901" duration="1782000" />
+      <workItem from="1717049503140" duration="5276000" />
+      <workItem from="1717073160658" duration="3427000" />
+      <workItem from="1717076776283" duration="188000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
